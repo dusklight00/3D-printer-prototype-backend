@@ -5,11 +5,12 @@ class Database {
     this.database = [];
   }
 
-  addOrder(name, model) {
+  addOrder(name, model, location) {
     const data = {
       id: uuidv4(),
       name: name,
       model: model,
+      location: location,
       status: "pending",
     };
     this.database.push(data);
