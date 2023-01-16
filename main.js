@@ -1,12 +1,5 @@
-import express from "express";
+import database from "./database";
 
-const app = express();
-const PORT = 5000 || process.env.PORT;
-
-app.get("/", (req, res) => {
-  res.send("hi");
-});
-
-app.listen(PORT, () => {
-  console.log(`[+] Server is running on the ${PORT}`);
-});
+database.addOrder("pratul", "model1");
+const result = database.getAllOrders();
+console.log(result);
