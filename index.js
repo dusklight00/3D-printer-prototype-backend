@@ -1,8 +1,11 @@
 import express from "express";
 import database from "./database";
+import cors from "cors";
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+
+app.use(cors());
 
 app.get("/get_orders", (req, res) => {
   const orders = database.getAllOrders();
