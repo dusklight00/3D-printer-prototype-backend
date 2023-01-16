@@ -23,6 +23,15 @@ class Database {
     const orderIndex = this.getOrderIndex(id);
     this.database[orderIndex].status = status;
   }
+  putOrderOnPending(id) {
+    this.updateStatus(id, "pending");
+  }
+  putOrderOnProcessing(id) {
+    this.updateStatus(id, "processing");
+  }
+  putOrderOnComplete(id) {
+    this.updateStatus(id, "complete");
+  }
   getAllOrders() {
     return this.database;
   }
