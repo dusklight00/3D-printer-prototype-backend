@@ -23,6 +23,10 @@ class Database {
     const orderIndex = this.getOrderIndex(id);
     this.database[orderIndex].status = status;
   }
+  deleteOrder(id) {
+    const index = this.getOrderIndex(id);
+    this.database.splice(index, 1);
+  }
   putOrderOnPending(id) {
     this.updateStatus(id, "pending");
   }

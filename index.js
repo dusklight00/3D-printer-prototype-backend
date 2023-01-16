@@ -49,6 +49,15 @@ app.get("/complete_order", (req, res) => {
   });
 });
 
+app.get("/delete_order", (req, res) => {
+  const id = req.query.id;
+  database.deleteOrder(id);
+  res.json({
+    status: "success",
+    message: `Order ${id} has been deleted`,
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`[+] Server is running on the port ${PORT}`);
 });
