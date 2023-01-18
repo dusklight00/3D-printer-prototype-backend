@@ -14,9 +14,9 @@ app.get("/get_orders", (req, res) => {
 
 app.get("/add_order", (req, res) => {
   const name = req.query.name;
-  const model = req.query.model;
-  const location = req.query.location;
-  database.addOrder(name, model, location);
+  const completeTime = req.query.completeTime;
+  const homeIndex = req.query.homeIndex;
+  database.addOrder(name, completeTime, homeIndex);
   res.json({
     status: "success",
     message: "Order has been placed",
