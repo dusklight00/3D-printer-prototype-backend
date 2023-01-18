@@ -5,11 +5,11 @@ class Database {
     this.database = [];
   }
 
-  addOrder(name, completeTime, homeIndex) {
+  addOrder(name, completionTime, homeIndex) {
     const data = {
       id: uuidv4(),
       name: name,
-      completeTime: completeTime,
+      completionTime: completionTime,
       home: homeIndex,
       status: "pending",
     };
